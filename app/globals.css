@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 250, 250, 250;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+html {
+  background: #000000;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #000000;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Immersive Space Effects */
+
+/* Animated Starfield Background */
+@keyframes drift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+  }
+}
+
+@keyframes drift-slow {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+  }
+}
+
+@keyframes drift-fast {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(150px);
+  }
+}
+
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Static stars using box-shadow */
+.starfield::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    /* Static stars scattered across the screen */
+    100px 200px 0 0 white,
+    300px 150px 0 0 white,
+    500px 400px 0 0 white,
+    700px 100px 0 0 white,
+    900px 500px 0 0 white,
+    200px 600px 0 0 white,
+    800px 700px 0 0 white,
+    400px 800px 0 0 white,
+    600px 300px 0 0 white,
+    150px 450px 0 0 white,
+    250px 350px 0 0 white,
+    650px 250px 0 0 white,
+    350px 550px 0 0 white,
+    750px 450px 0 0 white,
+    150px 650px 0 0 white,
+    850px 350px 0 0 white,
+    450px 150px 0 0 white,
+    550px 750px 0 0 white,
+    50px 300px 0 0 white,
+    950px 600px 0 0 white,
+    100px 800px 0 0 white,
+    800px 200px 0 0 white,
+    200px 100px 0 0 white,
+    600px 600px 0 0 white,
+    400px 400px 0 0 white,
+    800px 600px 0 0 white,
+    200px 500px 0 0 white,
+    700px 300px 0 0 white,
+    300px 700px 0 0 white,
+    500px 100px 0 0 white,
+    900px 200px 0 0 white,
+    100px 400px 0 0 white,
+    600px 800px 0 0 white,
+    400px 200px 0 0 white,
+    800px 800px 0 0 white,
+    200px 300px 0 0 white,
+    700px 700px 0 0 white,
+    300px 100px 0 0 white,
+    900px 700px 0 0 white,
+    50px 600px 0 0 white,
+    950px 300px 0 0 white,
+    150px 100px 0 0 white,
+    850px 900px 0 0 white,
+    /* Larger stars */
+    300px 300px 0 1px white,
+    700px 500px 0 1px white,
+    500px 700px 0 1px white,
+    200px 700px 0 1px white,
+    800px 300px 0 1px white;
+}
+
+/* Nebula Gradient Overlay */
+.nebula-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 30% 50%, rgba(138, 43, 226, 0.1), transparent 70%),
+    radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.08), transparent 70%),
+    radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.05), transparent 60%);
+  animation: nebula-shift 30s ease-in-out infinite;
+  mix-blend-mode: multiply;
+}
+
+@keyframes nebula-shift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(10px, -10px) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, 10px) scale(0.95);
+  }
+}
+
+/* Card Parallax Effect */
+.card-parallax {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-parallax:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-parallax {
+    transition: none;
+  }
+}
