@@ -15,8 +15,8 @@ export default function About() {
         </h2>
         <p className="text-white/80 text-lg leading-relaxed mb-4">
           AsAbove is a real-time celestial dashboard that helps you discover which planets and stars
-          are visible from your specific location. Whether you're an amateur astronomer, a curious
-          stargazer, or simply want to know what's above you right now, we make it easy to explore
+          are visible from your specific location. Whether you&apos;re an amateur astronomer, a curious
+          stargazer, or simply want to know what&apos;s above you right now, we make it easy to explore
           the night sky.
         </p>
         <p className="text-white/70 leading-relaxed">
@@ -64,7 +64,7 @@ export default function About() {
               4. Display Results
             </h3>
             <p className="text-white/70 leading-relaxed">
-              You'll see a curated list of celestial objects currently visible from your location,
+              You&apos;ll see a curated list of celestial objects currently visible from your location,
               complete with visibility status, magnitude, rise/set times, and fascinating facts.
             </p>
           </div>
@@ -97,7 +97,7 @@ export default function About() {
         <div className="p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
           <h3 className="font-display text-xl font-semibold text-white mb-3">Privacy</h3>
           <p className="text-white/70 leading-relaxed">
-            We respect your privacy. Your pincode is only used to fetch your coordinates—we don't
+            We respect your privacy. Your pincode is only used to fetch your coordinates—we don&apos;t
             store this information, and we never track your searches or location data.
           </p>
         </div>
